@@ -10,4 +10,134 @@ body {
   font-family: 'Oswald', sans-serif;
   background-color: rgba(57, 57, 175, 0.76);
 }
+
+#start {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#start img {
+  width: 100vw;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.7;
+}
+
+.start-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 2px solid white;
+  border-radius: 5px;
+  width: 50%;
+  height: 50%;
+  background-color: green;
+  margin: 1em;
+  -webkit-box-shadow: 4px 4px 6px white;
+          box-shadow: 4px 4px 6px white;
+}
+
+.start-container h1 {
+  font-size: 3em;
+  text-align: center;
+  color: white;
+  margin: 0 1em;
+}
+
+.start-container .start-btn {
+  width: 60%;
+  height: 15%;
+  margin: 2em 0 0 0;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  color: green;
+  border: 2px solid green;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+}
+
+.start-container .start-btn:hover {
+  background-color: #043004;
+  color: white;
+  border: 2px solid white;
+  letter-spacing: .2em;
+}
+
+.start-container .start-btn:active {
+  -webkit-box-shadow: inset 40px 40px 40px green;
+          box-shadow: inset 40px 40px 40px green;
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+
+#quiz,
+#score {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .start-container {
+    width: 45%;
+  }
+  .start-container .start-btn {
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .start-container {
+    width: 40%;
+  }
+  .start-container .start-btn {
+    width: 45%;
+    font-size: 1.7em;
+  }
+}
+
+@media (min-width: 992px) {
+  .start-container {
+    height: 45%;
+    width: 35%;
+  }
+  .start-container h1 {
+    font-size: 3.7em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .start-container {
+    height: 50%;
+    width: 25%;
+  }
+  .start-container h1 {
+    font-size: 4em;
+  }
+  .start-container .start-btn {
+    width: 45%;
+    font-size: 2em;
+  }
+}
 /*# sourceMappingURL=style.css.map */
