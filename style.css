@@ -171,13 +171,18 @@ body {
   font-size: .8em;
   border: 2px solid white;
   background-color: white;
-  width: 75%;
+  width: 300px;
   margin: 0 auto;
   padding: .5em;
   border-radius: 5px;
   cursor: pointer;
   -webkit-transition: .5s;
   transition: .5s;
+}
+
+#quiz .answer-btn h4 {
+  display: inline;
+  color: blue;
 }
 
 #quiz .answer-btn:hover {
@@ -257,7 +262,7 @@ body {
     gap: 2em 1em;
   }
   #quiz .quiz-container .answer-btn {
-    width: 90%;
+    width: 200px;
   }
 }
 
@@ -294,7 +299,7 @@ body {
     margin: 2.5em auto 1.5em;
   }
   #quiz .quiz-container .answer-btn {
-    width: 80%;
+    width: 240px;
   }
 }
 
@@ -310,7 +315,7 @@ body {
     font-size: 2em;
   }
   #quiz .quiz-container .answer-btn {
-    width: 75%;
+    width: 300px;
   }
 }
 /*# sourceMappingURL=style.css.map */

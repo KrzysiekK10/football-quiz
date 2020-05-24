@@ -3,6 +3,10 @@ const quizPage = document.getElementById('quiz')
 const startButton = document.getElementById('start-btn')
 const questionTag = document.getElementById('question')
 const answersTag = document.getElementById('answers')
+const answerATag = document.getElementById('answerA')
+const answerBTag = document.getElementById('answerB')
+const answerCTag = document.getElementById('answerC')
+const answerDTag = document.getElementById('answerD')
 const questionsIndex = 0;
 
 startButton.addEventListener('click', startQuiz)
@@ -10,16 +14,20 @@ startButton.addEventListener('click', startQuiz)
 function startQuiz() {
     startPage.style.display = "none"
     quizPage.style.display = "flex"
-    runQuestion()
+    runQuestion();
 }
 
-let showQuestion = 1; /*testing questions*/
+let showQuestion = 0; /*index - only for testing question and answers*/
 
 function runQuestion() {
     let quest = questions[showQuestion];
-
     questionTag.innerHTML = quest.question;
+    answerATag.innerHTML = "<h4>A.</h4>" + " " + quest.answers[0].answerA;
+    answerBTag.innerHTML = "<h4>B.</h4>" + " " + quest.answers[1].answerB;
+    answerCTag.innerHTML = "<h4>C.</h4>" + " " + quest.answers[2].answerC;
+    answerDTag.innerHTML = "<h4>D.</h4>" + " " + quest.answers[3].answerD;
 }
+
 
 const questions = [{
         question: "Kto został królem strzelców na mundialu we Francji w 1998 roku?",
