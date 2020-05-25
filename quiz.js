@@ -15,9 +15,23 @@ function startQuiz() {
     startPage.style.display = "none"
     quizPage.style.display = "flex"
     runQuestion();
+    runTime();
+}
+//time countdown
+function runTime() {
+    let counter = 10;
+    setInterval(() => {
+        counter--;
+        if (counter >= 0) {
+            timeLeft = document.getElementById('timer');
+            timeLeft.innerHTML = counter;
+        } else {
+            alert('out of time');
+        }
+    }, 1000);
 }
 
-let showQuestion = 0; /*index - only for testing question and answers*/
+let showQuestion = 0; //index - only for testing question and answers
 
 function runQuestion() {
     let quest = questions[showQuestion];
@@ -27,7 +41,6 @@ function runQuestion() {
     answerCTag.innerHTML = "<h4>C.</h4>" + " " + quest.answers[2].answerC;
     answerDTag.innerHTML = "<h4>D.</h4>" + " " + quest.answers[3].answerD;
 }
-
 
 const questions = [{
         question: "Kto został królem strzelców na mundialu we Francji w 1998 roku?",
