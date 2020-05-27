@@ -7,7 +7,9 @@ const answerATag = document.getElementById('answerA')
 const answerBTag = document.getElementById('answerB')
 const answerCTag = document.getElementById('answerC')
 const answerDTag = document.getElementById('answerD')
-const questionsIndex = 0;
+const nextQuestion = document.getElementById('nextQuestions')
+
+let questionsIndex = 0; //index questions 
 
 startButton.addEventListener('click', startQuiz)
 
@@ -31,10 +33,10 @@ function runTime() {
     }, 1000);
 }
 
-let showQuestion = 0; //index - only for testing question and answers
+//let showQuestion = 0; //index - only for testing question and answers
 
 function runQuestion() {
-    let quest = questions[showQuestion];
+    let quest = questions[questionsIndex];
     questionTag.innerHTML = quest.question;
     answerATag.innerHTML = "<h4>A.</h4>" + " " + quest.answers[0].answerA;
     answerBTag.innerHTML = "<h4>B.</h4>" + " " + quest.answers[1].answerB;
@@ -463,3 +465,18 @@ const questions = [{
 
     },
 ]
+
+const lastQuestion = questions.length - 1;
+
+nextQuestion.addEventListener('click', setNext)
+
+function setNext() {
+
+    if (questionsIndex < lastQuestion) {
+        questionsIndex++;
+        runQuestion();
+    } else {
+        alert('End questions'); // last question + score page
+
+    }
+}
