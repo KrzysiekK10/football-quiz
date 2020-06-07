@@ -8,6 +8,7 @@ const answerBTag = document.getElementById('answerB')
 const answerCTag = document.getElementById('answerC')
 const answerDTag = document.getElementById('answerD')
 const nextQuestion = document.getElementById('nextQuestions')
+const scorePage = document.getElementById('score')
 
 let questionsIndex = 0; //index questions 
 
@@ -17,10 +18,10 @@ function startQuiz() {
     startPage.style.display = "none"
     quizPage.style.display = "flex"
     runQuestion();
-    runTime();
+    //runTime();//   stop only for using score page
 }
-//time countdown
-function runTime() {
+//time countdown//
+/*function runTime() {
     let counter = 10;
     setInterval(() => {
         counter--;
@@ -31,20 +32,18 @@ function runTime() {
             alert('out of time');
         }
     }, 1000);
-}
-
-//let showQuestion = 0; //index - only for testing question and answers
+}*/
 
 function runQuestion() {
     let quest = questions[questionsIndex];
     questionTag.innerHTML = quest.question;
-    answerATag.innerHTML = "<h4>A.</h4>" + " " + quest.answers[0].answerA;
-    answerBTag.innerHTML = "<h4>B.</h4>" + " " + quest.answers[1].answerB;
-    answerCTag.innerHTML = "<h4>C.</h4>" + " " + quest.answers[2].answerC;
-    answerDTag.innerHTML = "<h4>D.</h4>" + " " + quest.answers[3].answerD;
+    answerATag.innerHTML = "<h4>A.</h4>" + " " + quest.answers[0];
+    answerBTag.innerHTML = "<h4>B.</h4>" + " " + quest.answers[1];
+    answerCTag.innerHTML = "<h4>C.</h4>" + " " + quest.answers[2];
+    answerDTag.innerHTML = "<h4>D.</h4>" + " " + quest.answers[3];
 }
 
-const questions = [{
+let questions = [{
         question: "Kto został królem strzelców na mundialu we Francji w 1998 roku?",
         answers: [{
                 answerA: "Davor Suker",
@@ -87,7 +86,7 @@ const questions = [{
 
     },
     {
-        question: "Kto wygrał ostatni Puchar Zdobywcow Pucharów w 1999 roku?",
+        question: "Kto wygrał ostatni Puchar Zdobywcow Pucharów?",
         answers: [{
                 answerA: "Parma",
                 correct: false
@@ -476,7 +475,15 @@ function setNext() {
         questionsIndex++;
         runQuestion();
     } else {
-        alert('End questions'); // last question + score page
+        nextQuestion.textContent = 'Finish';
+        nextQuestion.addEventListener('click', final);
+
+        function final() {
+            quizPage.style.display = "none";
+            scorePage.style.display = "flex";
+            scoreResult.innerHTML = score + "/" + questions.length;
+
+        } // last question + score page
 
     }
-}
+};

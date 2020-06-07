@@ -41,6 +41,13 @@ $hide: none;
     transition: .5s;
 }
 
+@mixin title {
+    font-size: 3em;
+    text-align: center;
+    color: white;
+    margin: 0 1em;
+}
+
 
 * {
     margin: 0px;
@@ -53,7 +60,8 @@ body {
     background-color: rgba(57, 57, 175, 0.76);
 }
 
-#start {
+#start,
+#score {
     @include flex-center;
 
     img {
@@ -64,16 +72,13 @@ body {
     }
 }
 
-.start-container {
+.start-container,
+.score-container {
     @include flex-center;
     @include container;
 
-
     h1 {
-        font-size: 3em;
-        text-align: center;
-        color: white;
-        margin: 0 1em;
+        @include title;
     }
 
     #start-btn {
@@ -81,7 +86,6 @@ body {
         width: 60%;
         height: 15%;
         margin: 2em 0 0 0;
-
 
         &:hover {
             background-color: rgb(4, 48, 4);
@@ -182,6 +186,12 @@ body {
         }
     }
 
+}
+
+.score-container {
+    #result {
+        @include title;
+    }
 }
 
 //  media queries// 
@@ -302,6 +312,13 @@ body {
             .answer-btn {
                 width: 300px;
             }
+
+        }
+    }
+
+    #score {
+        .score-container {
+            width: 30%;
 
         }
     }
