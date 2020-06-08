@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.0.7/css/all.css');
+
 $hide: none;
 
 @mixin flex-center {
@@ -81,11 +83,17 @@ body {
         @include title;
     }
 
+    .fas {
+        color: white;
+        font-size: 28px;
+        margin: 2vh;
+    }
+
     #start-btn {
         @include button;
         width: 60%;
         height: 15%;
-        margin: 2em 0 0 0;
+        margin: 1.8em 0;
 
         &:hover {
             background-color: rgb(4, 48, 4);
@@ -242,9 +250,14 @@ body {
                 font-size: 3.4em;
             }
 
+            .fas {
+                font-size: 40px;
+            }
+
             #start-btn {
                 width: 45%;
                 font-size: 1.7em;
+                margin: 1em 0;
             }
         }
     }
@@ -302,7 +315,7 @@ body {
 
             #start-btn {
                 width: 45%;
-                font-size: 2em;
+                font-size: 1.8em;
             }
         }
     }

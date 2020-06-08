@@ -37,10 +37,10 @@ function startQuiz() {
 function runQuestion() {
     let quest = questions[questionsIndex];
     questionTag.innerHTML = quest.question;
-    answerATag.innerHTML = "<h4>A.</h4>" + " " + quest.answers[0];
-    answerBTag.innerHTML = "<h4>B.</h4>" + " " + quest.answers[1];
-    answerCTag.innerHTML = "<h4>C.</h4>" + " " + quest.answers[2];
-    answerDTag.innerHTML = "<h4>D.</h4>" + " " + quest.answers[3];
+    answerATag.innerHTML = "<h4>A.</h4>" + " " + quest.answers[0].answerA;
+    answerBTag.innerHTML = "<h4>B.</h4>" + " " + quest.answers[1].answerB
+    answerCTag.innerHTML = "<h4>C.</h4>" + " " + quest.answers[2].answerC;
+    answerDTag.innerHTML = "<h4>D.</h4>" + " " + quest.answers[3].answerD;
 }
 
 let questions = [{
