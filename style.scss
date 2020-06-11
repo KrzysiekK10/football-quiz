@@ -50,7 +50,6 @@ $hide: none;
     margin: 0 1em;
 }
 
-
 * {
     margin: 0px;
     padding: 0px;
@@ -78,6 +77,9 @@ body {
 .score-container {
     @include flex-center;
     @include container;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: .5s;
 
     h1 {
         @include title;
@@ -126,6 +128,8 @@ body {
         width: 90%;
         margin: 0;
         padding: 20px;
+        animation: leftIn .7s ease forwards;
+        transition-delay: .5s;
     }
 
     .top {
@@ -199,6 +203,26 @@ body {
 .score-container {
     #result {
         @include title;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes leftIn {
+    0% {
+        left: -50%;
+    }
+
+    100% {
+        left: 50%;
     }
 }
 

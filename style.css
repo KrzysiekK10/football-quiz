@@ -62,6 +62,11 @@ body {
   margin: 1em;
   -webkit-box-shadow: 2px 2px 10px 2px white;
           box-shadow: 2px 2px 10px 2px white;
+  opacity: 0;
+  -webkit-animation: fadeIn 1s ease forwards;
+          animation: fadeIn 1s ease forwards;
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
 }
 
 .start-container h1,
@@ -158,6 +163,10 @@ body {
   width: 90%;
   margin: 0;
   padding: 20px;
+  -webkit-animation: leftIn .7s ease forwards;
+          animation: leftIn .7s ease forwards;
+  -webkit-transition-delay: .5s;
+          transition-delay: .5s;
 }
 
 #quiz .top {
@@ -259,6 +268,42 @@ body {
   text-align: center;
   color: white;
   margin: 0 1em;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes leftIn {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+
+@keyframes leftIn {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 50%;
+  }
 }
 
 @media (min-width: 576px) {

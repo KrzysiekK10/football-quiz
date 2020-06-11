@@ -37,8 +37,9 @@ function startQuiz() {
 function runQuestion() {
     let quest = questions[questionsIndex];
     questionTag.innerHTML = quest.question;
+    questionTag.innerHTML = quest.question;
     answerATag.innerHTML = "<h4>A.</h4>" + " " + quest.answers[0].answerA;
-    answerBTag.innerHTML = "<h4>B.</h4>" + " " + quest.answers[1].answerB
+    answerBTag.innerHTML = "<h4>B.</h4>" + " " + quest.answers[1].answerB;
     answerCTag.innerHTML = "<h4>C.</h4>" + " " + quest.answers[2].answerC;
     answerDTag.innerHTML = "<h4>D.</h4>" + " " + quest.answers[3].answerD;
 }
@@ -85,6 +86,7 @@ let questions = [{
         ]
 
     },
+
     {
         question: "Kto wygrał ostatni Puchar Zdobywcow Pucharów?",
         answers: [{
