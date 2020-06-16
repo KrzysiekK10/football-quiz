@@ -12,6 +12,7 @@ const scorePage = document.getElementById('score')
 
 let questionsIndex = 0; //index questions 
 let score = 0;
+let indexNumber = 0; // question number
 
 startButton.addEventListener('click', startQuiz)
 
@@ -31,7 +32,6 @@ function runTime() {
         if (counter >= 0) {
             timeLeft = document.getElementById('timer');
             timeLeft.innerHTML = counter;
-            timeLeft.style.color = "white";
         } else {
             // alert('out of time');
             disabled(); // score = 0
@@ -143,7 +143,7 @@ let questions = [{
 
 function runQuestion() {
     let quest = questions[questionsIndex];
-    questionTag.innerHTML = quest.question;
+    questionTag.innerHTML = indexNumber + 1 + ". " + " " + quest.question;
     answerATag.innerHTML = "<h4>A.</h4>" + " " + quest.answers[0];
     answerBTag.innerHTML = "<h4>B.</h4>" + " " + quest.answers[1];
     answerCTag.innerHTML = "<h4>C.</h4>" + " " + quest.answers[2];
@@ -157,6 +157,7 @@ nextQuestion.addEventListener('click', setNext)
 function setNext() {
     clearStatus(); // reset classes for answers
     counter = 11; // 10 seconds time for each question
+    indexNumber++; // question number
 
     if (questionsIndex < lastQuestion) {
         questionsIndex++;
