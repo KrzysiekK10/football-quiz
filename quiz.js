@@ -19,23 +19,25 @@ function startQuiz() {
     startPage.style.display = "none"
     quizPage.style.display = "flex"
     runQuestion();
-    //runTime(); //   stop only for using score page
+    runTime(); //  stop only for using score page
 }
 
 //time countdown//
-/*function runTime() {
-    let counter = 10;
+let counter = 10;
+
+function runTime() {
     setInterval(() => {
         counter--;
         if (counter >= 0) {
             timeLeft = document.getElementById('timer');
             timeLeft.innerHTML = counter;
+            timeLeft.style.color = "white";
         } else {
-            alert('out of time');
-            disabled();
+            // alert('out of time');
+            disabled(); // score = 0
         }
     }, 1000);
-}*/
+}
 
 let questions = [{
         question: "Kto został królem strzelców na mundialu we Francji w 1998 roku?",
@@ -153,7 +155,8 @@ const lastQuestion = questions.length - 1;
 nextQuestion.addEventListener('click', setNext)
 
 function setNext() {
-    clearStatus(); // reset answers all classes 
+    clearStatus(); // reset classes for answers
+    counter = 11; // 10 seconds time for each question
 
     if (questionsIndex < lastQuestion) {
         questionsIndex++;
@@ -188,6 +191,7 @@ answersTag.forEach(function (answer) {
         }
 
         disabled(); // another answers are unclickable
+        counter = 0; // pause timer
     })
 })
 
