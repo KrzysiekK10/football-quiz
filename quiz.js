@@ -2,7 +2,7 @@ const startPage = document.getElementById('start')
 const quizPage = document.getElementById('quiz')
 const startButton = document.getElementById('start-btn')
 const questionTag = document.getElementById('question')
-const answersTag = document.getElementById('answers')
+const answersContainer = document.getElementById('answers')
 const answerATag = document.getElementById('answerA')
 const answerBTag = document.getElementById('answerB')
 const answerCTag = document.getElementById('answerC')
@@ -11,6 +11,7 @@ const nextQuestion = document.getElementById('nextQuestions')
 const scorePage = document.getElementById('score')
 
 let questionsIndex = 0; //index questions 
+let score = 0;
 
 startButton.addEventListener('click', startQuiz)
 
@@ -18,8 +19,9 @@ function startQuiz() {
     startPage.style.display = "none"
     quizPage.style.display = "flex"
     runQuestion();
-    //runTime();//   stop only for using score page
+    //runTime(); //   stop only for using score page
 }
+
 //time countdown//
 /*function runTime() {
     let counter = 10;
@@ -30,19 +32,10 @@ function startQuiz() {
             timeLeft.innerHTML = counter;
         } else {
             alert('out of time');
+            disabled();
         }
     }, 1000);
 }*/
-
-function runQuestion() {
-    let quest = questions[questionsIndex];
-    questionTag.innerHTML = quest.question;
-    questionTag.innerHTML = quest.question;
-    answerATag.innerHTML = "<h4>A.</h4>" + " " + quest.answers[0];
-    answerBTag.innerHTML = "<h4>B.</h4>" + " " + quest.answers[1];
-    answerCTag.innerHTML = "<h4>C.</h4>" + " " + quest.answers[2];
-    answerDTag.innerHTML = "<h4>D.</h4>" + " " + quest.answers[3];
-}
 
 let questions = [{
         question: "Kto został królem strzelców na mundialu we Francji w 1998 roku?",
@@ -85,7 +78,7 @@ let questions = [{
         correct: answerC,
     },
     {
-        question: "Ile razy Paolo Maldini zdobył Pucharów Europy/Ligę Mistrzów?",
+        question: "Ile Pucharów Europy/Ligę Mistrzów zdobył w karierze Paolo Maldini?",
         answers: ["2", "3", "4", "5"],
         correct: answerD,
     },
@@ -105,7 +98,7 @@ let questions = [{
         correct: answerB,
     },
     {
-        question: "Która z drużyn ma najwięcej tytułów Mistrza Brazylii?",
+        question: "Która drużyna ma najwięcej tytułów Mistrza Brazylii?",
         answers: ["SE Palmeiras", "Fluminense FC", "SC Corinthians", "Vasco da Gama"],
         correct: answerA,
     },
@@ -120,14 +113,14 @@ let questions = [{
         correct: answerC,
     },
     {
-        question: "Który piłkarz nie grał w MLS?",
-        answers: ["David Beckham", "Lothar Matthäus", "Kaka", "Hernan Crespo"],
-        correct: answerD,
-    },
-    {
         question: "Kogo w swoim pierwszym sezonie w 2003 roku Roman Abramowicz nie ściągnął do Chelsea?",
         answers: ["Joe Cole", "Juan Sebastian Veron", "Didier Drogba", "Claude Makalele"],
         correct: answerC,
+    },
+    {
+        question: "Który piłkarz nie grał w MLS?",
+        answers: ["David Beckham", "Lothar Matthäus", "Kaka", "Fernando Torres"],
+        correct: answerD,
     },
     {
         question: "Kto ma najwięcej występów w koszulce Realu Madryt w historii?",
@@ -146,11 +139,21 @@ let questions = [{
     },
 ]
 
+function runQuestion() {
+    let quest = questions[questionsIndex];
+    questionTag.innerHTML = quest.question;
+    answerATag.innerHTML = "<h4>A.</h4>" + " " + quest.answers[0];
+    answerBTag.innerHTML = "<h4>B.</h4>" + " " + quest.answers[1];
+    answerCTag.innerHTML = "<h4>C.</h4>" + " " + quest.answers[2];
+    answerDTag.innerHTML = "<h4>D.</h4>" + " " + quest.answers[3];
+}
+
 const lastQuestion = questions.length - 1;
 
 nextQuestion.addEventListener('click', setNext)
 
 function setNext() {
+    clearStatus(); // reset answers all classes 
 
     if (questionsIndex < lastQuestion) {
         questionsIndex++;
@@ -162,9 +165,44 @@ function setNext() {
         function final() {
             quizPage.style.display = "none";
             scorePage.style.display = "flex";
-            scoreResult.innerHTML = score + "/" + questions.length;
-
-        } // last question + score page
-
+            scoreResult.innerHTML = score + "/" + questions.length; // last question + score page
+        }
     }
-};
+}
+
+let answersTag = document.querySelectorAll('.answer-btn');
+
+// check answers 
+answersTag.forEach(function (answer) {
+    answer.addEventListener('click', function () {
+
+        if (answer == questions[questionsIndex].correct) {
+            // alert('correct'); // only for tests
+            answer.classList.add('correct');
+            answer.innerHTML = "correct";
+            score++; // add point
+        } else {
+            console.log('wrong'); // only for tests
+            answer.classList.add('wrong');
+            answer.innerHTML = "wrong";
+        }
+
+        disabled(); // another answers are unclickable
+    })
+})
+
+const answersLen = answersContainer.children.length;
+
+function clearStatus() {
+    for (let i = 0; i < answersLen; i++) {
+        answersContainer.children[i].classList.remove('correct');
+        answersContainer.children[i].classList.remove('wrong');
+        answersContainer.children[i].classList.remove('answered');
+    }
+}
+
+function disabled() {
+    for (let i = 0; i < answersLen; i++) {
+        answersContainer.children[i].classList.add('answered');
+    }
+}

@@ -169,19 +169,23 @@ body {
           transition-delay: .5s;
 }
 
-#quiz .top {
+#quiz .quiz-container .top {
   text-align: center;
   font-size: 1.4em;
   margin: 0;
+  height: 80px;
 }
 
-#quiz .time {
+#quiz .quiz-container .time {
   text-align: right;
   font-size: 1em;
+  font-weight: 700;
+  color: white;
   margin: .2em;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
 
-#quiz .grid {
+#quiz .quiz-container .grid {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (auto)[1];
@@ -191,7 +195,7 @@ body {
   margin: 1em auto;
 }
 
-#quiz .answer-btn {
+#quiz .quiz-container .answer-btn {
   font-size: .8em;
   border: 2px solid white;
   background-color: white;
@@ -204,17 +208,45 @@ body {
   transition: .5s;
 }
 
-#quiz .answer-btn h4 {
-  display: inline;
+#quiz .quiz-container .answer-btn h4 {
+  display: inline-block;
   color: blue;
 }
 
-#quiz .answer-btn:hover {
-  background-color: #2895ff;
+#quiz .quiz-container .answer-btn:hover {
   border-color: dodgerblue;
+  cursor: pointer;
 }
 
-#quiz .next {
+#quiz .quiz-container .correct {
+  background-color: limegreen;
+  border-color: limegreen;
+  color: white;
+  font-weight: 700;
+}
+
+#quiz .quiz-container .correct:hover {
+  border-color: limegreen;
+}
+
+#quiz .quiz-container .wrong {
+  background-color: red;
+  border-color: red;
+}
+
+#quiz .quiz-container .wrong:hover {
+  border-color: red;
+}
+
+#quiz .quiz-container .answered {
+  pointer-events: none;
+}
+
+#quiz .quiz-container .answered:hover {
+  cursor: no-drop;
+}
+
+#quiz .quiz-container .next {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -223,7 +255,7 @@ body {
           justify-content: flex-end;
 }
 
-#quiz .next .next-btn {
+#quiz .quiz-container .next .next-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -257,10 +289,11 @@ body {
   right: 20px;
 }
 
-#quiz .next .next-btn:hover {
+#quiz .quiz-container .next .next-btn:hover {
   background-color: mediumblue;
   color: white;
   border-color: white;
+  cursor: pointer;
 }
 
 .score-container #result {
