@@ -91,6 +91,11 @@ body {
         margin: 2vh;
     }
 
+    h3 {
+        @include title;
+        font-size: 1.5em;
+    }
+
     #start-btn {
         @include button;
         width: 60%;
@@ -206,6 +211,10 @@ body {
             }
         }
 
+        .transition-time {
+            transition-delay: 1s;
+        }
+
         .next {
             display: flex;
             justify-content: flex-end;
@@ -231,12 +240,6 @@ body {
         }
     }
 
-}
-
-.score-container {
-    #result {
-        @include title;
-    }
 }
 
 @keyframes fadeIn {

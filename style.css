@@ -84,6 +84,15 @@ body {
   margin: 2vh;
 }
 
+.start-container h3,
+.score-container h3 {
+  font-size: 3em;
+  text-align: center;
+  color: white;
+  margin: 0 1em;
+  font-size: 1.5em;
+}
+
 .start-container #start-btn,
 .score-container #start-btn {
   display: -webkit-box;
@@ -246,6 +255,11 @@ body {
   cursor: no-drop;
 }
 
+#quiz .quiz-container .transition-time {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
 #quiz .quiz-container .next {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -294,13 +308,6 @@ body {
   color: white;
   border-color: white;
   cursor: pointer;
-}
-
-.score-container #result {
-  font-size: 3em;
-  text-align: center;
-  color: white;
-  margin: 0 1em;
 }
 
 @-webkit-keyframes fadeIn {

@@ -175,20 +175,29 @@ function setNext() {
 }
 
 let answersTag = document.querySelectorAll('.answer-btn');
+const answersLen = answersContainer.children.length;
 
 // check answers 
 answersTag.forEach(function (answer) {
     answer.addEventListener('click', function () {
 
-        if (answer == questions[questionsIndex].correct) {
-            // alert('correct'); // only for tests
+        if (answer === questions[questionsIndex].correct) {
             answer.classList.add('correct');
             answer.innerHTML = "correct";
             score++; // add point
         } else {
-            console.log('wrong'); // only for tests
             answer.classList.add('wrong');
             answer.innerHTML = "wrong";
+            showCorrectAnswer();
+        }
+
+        function showCorrectAnswer() {
+            for (let i = 0; i < answersLen; i++) {
+                if (answersContainer.children[i] === questions[questionsIndex].correct) {
+                    answersContainer.children[i].classList.add('correct');
+                    answersContainer.children[i].classList.add('transition-time');
+                }
+            }
         }
 
         disabled(); // another answers are unclickable
@@ -196,13 +205,12 @@ answersTag.forEach(function (answer) {
     })
 })
 
-const answersLen = answersContainer.children.length;
-
 function clearStatus() {
     for (let i = 0; i < answersLen; i++) {
         answersContainer.children[i].classList.remove('correct');
         answersContainer.children[i].classList.remove('wrong');
         answersContainer.children[i].classList.remove('answered');
+        answersContainer.children[i].classList.remove('transition-time');
     }
 }
 
