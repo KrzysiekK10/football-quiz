@@ -96,7 +96,8 @@ body {
         font-size: 1.5em;
     }
 
-    #start-btn {
+    #start-btn,
+    #home-btn {
         @include button;
         width: 60%;
         height: 15%;
@@ -240,6 +241,35 @@ body {
         }
     }
 
+}
+
+.score-container {
+
+    h3 {
+        text-transform: uppercase;
+        letter-spacing: .2em;
+    }
+
+    hr {
+        border: 1px solid white;
+        width: 30%;
+        margin: 1em 0;
+    }
+
+    #result,
+    #percentage {
+        @include title;
+    }
+
+    #home-btn {
+        width: 45%;
+    }
+
+    .copyright {
+        color: white;
+        text-align: center;
+        font-size: .8em;
+    }
 }
 
 @keyframes fadeIn {

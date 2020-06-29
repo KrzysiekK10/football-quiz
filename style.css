@@ -94,7 +94,9 @@ body {
 }
 
 .start-container #start-btn,
-.score-container #start-btn {
+.start-container #home-btn,
+.score-container #start-btn,
+.score-container #home-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -124,7 +126,9 @@ body {
 }
 
 .start-container #start-btn:hover,
-.score-container #start-btn:hover {
+.start-container #home-btn:hover,
+.score-container #start-btn:hover,
+.score-container #home-btn:hover {
   background-color: #043004;
   color: white;
   border: 2px solid white;
@@ -132,7 +136,9 @@ body {
 }
 
 .start-container #start-btn:active,
-.score-container #start-btn:active {
+.start-container #home-btn:active,
+.score-container #start-btn:active,
+.score-container #home-btn:active {
   -webkit-box-shadow: inset 40px 40px 40px green;
           box-shadow: inset 40px 40px 40px green;
   -webkit-filter: blur(10px);
@@ -308,6 +314,35 @@ body {
   color: white;
   border-color: white;
   cursor: pointer;
+}
+
+.score-container h3 {
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+
+.score-container hr {
+  border: 1px solid white;
+  width: 30%;
+  margin: 1em 0;
+}
+
+.score-container #result,
+.score-container #percentage {
+  font-size: 3em;
+  text-align: center;
+  color: white;
+  margin: 0 1em;
+}
+
+.score-container #home-btn {
+  width: 45%;
+}
+
+.score-container .copyright {
+  color: white;
+  text-align: center;
+  font-size: .8em;
 }
 
 @-webkit-keyframes fadeIn {

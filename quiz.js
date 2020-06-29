@@ -9,6 +9,9 @@ const answerCTag = document.getElementById('answerC')
 const answerDTag = document.getElementById('answerD')
 const nextQuestion = document.getElementById('nextQuestions')
 const scorePage = document.getElementById('score')
+const scoreResult = document.getElementById('result')
+const scorePercantage = document.getElementById('percentage')
+const homeButton = document.getElementById('home-btn')
 
 let questionsIndex = 0; //index questions 
 let score = 0;
@@ -163,13 +166,22 @@ function setNext() {
         questionsIndex++;
         runQuestion();
     } else {
-        nextQuestion.textContent = 'Finish';
-        nextQuestion.addEventListener('click', final);
+        answersContainer.innerHTML = '';
+        nextQuestion.innerHTML = 'Finish';
+        final();
 
         function final() {
             quizPage.style.display = "none";
             scorePage.style.display = "flex";
             scoreResult.innerHTML = score + "/" + questions.length; // last question + score page
+            scorePercantage.innerHTML = Math.round(100 * score / questions.length) + "%";
+            homeButton.addEventListener('click', goHome);
+
+            function goHome() {
+                scorePage.style.display = 'none';
+                startPage.style.display = 'flex';
+                score = 0;
+            }
         }
     }
 }
