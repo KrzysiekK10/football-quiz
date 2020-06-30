@@ -2,6 +2,7 @@ const startPage = document.getElementById('start')
 const quizPage = document.getElementById('quiz')
 const startButton = document.getElementById('start-btn')
 const questionTag = document.getElementById('question')
+const questionNumber = document.getElementById('currentQuestion')
 const answersContainer = document.getElementById('answers')
 const answerATag = document.getElementById('answerA')
 const answerBTag = document.getElementById('answerB')
@@ -43,8 +44,8 @@ function runTime() {
 }
 
 let questions = [{
-        question: "Kto został królem strzelców na mundialu we Francji w 1998 roku?",
-        answers: ["Davor Suker", "Dennis Bergkamp", "Ronaldo Nazario", "Thierry Henry"],
+        question: "W którym klubie grał Zinédine Zidane?",
+        answers: ["Girondins Bordeaux", "Olympique Lyon", "AS Saint-Étienne", "FC Nantes"],
         correct: answerA,
     },
     {
@@ -146,7 +147,8 @@ let questions = [{
 
 function runQuestion() {
     let quest = questions[questionsIndex];
-    questionTag.innerHTML = indexNumber + 1 + ". " + " " + quest.question;
+    questionNumber.textContent = indexNumber + 1 + " / " + questions.length;
+    questionTag.textContent = quest.question;
     answerATag.innerHTML = "<h4>A.</h4>" + " " + quest.answers[0];
     answerBTag.innerHTML = "<h4>B.</h4>" + " " + quest.answers[1];
     answerCTag.innerHTML = "<h4>C.</h4>" + " " + quest.answers[2];
@@ -178,8 +180,7 @@ function setNext() {
             homeButton.addEventListener('click', goHome);
 
             function goHome() {
-                scorePage.style.display = 'none';
-                startPage.style.display = 'flex';
+                window.location.reload(true);
                 score = 0;
             }
         }

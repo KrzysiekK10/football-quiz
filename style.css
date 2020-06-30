@@ -12,6 +12,20 @@ body {
   background-color: rgba(57, 57, 175, 0.76);
 }
 
+header {
+  font-size: 2.7em;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  text-align: unset;
+  margin: 0 auto;
+  text-shadow: 3px 4px 0 black;
+}
+
 #start,
 #score {
   display: -webkit-box;
@@ -31,7 +45,6 @@ body {
   height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
-  opacity: 0.7;
 }
 
 .start-container,
@@ -71,7 +84,7 @@ body {
 
 .start-container h1,
 .score-container h1 {
-  font-size: 3em;
+  font-size: 2.7em;
   text-align: center;
   color: white;
   margin: 0 1em;
@@ -86,10 +99,9 @@ body {
 
 .start-container h3,
 .score-container h3 {
-  font-size: 3em;
+  font-size: 2.7em;
   text-align: center;
   color: white;
-  margin: 0 1em;
   font-size: 1.5em;
 }
 
@@ -184,11 +196,24 @@ body {
           transition-delay: .5s;
 }
 
+#quiz .quiz-container .question-number {
+  color: white;
+  font-size: 1em;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+  /*border: 2px solid white;
+            border-radius: 8px;
+            width: 20%;
+            text-align: center;*/
+}
+
 #quiz .quiz-container .top {
   text-align: center;
   font-size: 1.4em;
   margin: 0;
   height: 80px;
+  color: white;
+  padding: 10px;
+  text-shadow: 2px 8px 4px rgba(0, 0, 0, 0.3);
 }
 
 #quiz .quiz-container .time {
@@ -305,7 +330,7 @@ body {
   border-radius: 10px;
   background: steelblue;
   position: absolute;
-  top: 370px;
+  top: 380px;
   right: 20px;
 }
 
@@ -329,10 +354,9 @@ body {
 
 .score-container #result,
 .score-container #percentage {
-  font-size: 3em;
+  font-size: 2.7em;
   text-align: center;
   color: white;
-  margin: 0 1em;
 }
 
 .score-container #home-btn {
@@ -343,6 +367,7 @@ body {
   color: white;
   text-align: center;
   font-size: .8em;
+  margin-bottom: 10px;
 }
 
 @-webkit-keyframes fadeIn {
@@ -404,7 +429,7 @@ body {
     gap: 2em 1em;
   }
   #quiz .quiz-container .answer-btn {
-    width: 200px;
+    width: 180px;
   }
 }
 
@@ -440,12 +465,13 @@ body {
   }
   #quiz .quiz-container .top {
     font-size: 1.8em;
+    padding: 0px 40px;
   }
   #quiz .quiz-container .grid {
     margin: 2.5em auto 1.5em;
   }
   #quiz .quiz-container .answer-btn {
-    width: 240px;
+    width: 220px;
   }
 }
 
@@ -461,7 +487,7 @@ body {
     font-size: 1.8em;
   }
   #quiz .quiz-container .answer-btn {
-    width: 300px;
+    width: 270px;
   }
   #score .score-container {
     width: 30%;
