@@ -13,6 +13,7 @@ const scorePage = document.getElementById('score')
 const scoreResult = document.getElementById('result')
 const scorePercantage = document.getElementById('percentage')
 const homeButton = document.getElementById('home-btn')
+let userResult = document.getElementById('user');
 
 let questionsIndex = 0; //index questions 
 let score = 0;
@@ -44,9 +45,10 @@ function runTime() {
 }
 
 let questions = [{
-        question: "W którym klubie grał Zinédine Zidane?",
-        answers: ["Girondins Bordeaux", "Olympique Lyon", "AS Saint-Étienne", "FC Nantes"],
-        correct: answerA,
+        question: "Kto został królem strzelców na mundialu we Francji w 1998 roku?",
+        answers: ["Davor Suker", "Dennis Bergkamp", "Ronaldo Nazario", "Thierry Henry"],
+        correct: 0,
+
     },
     {
         question: "Kto zagrał w meczu finałowym mundialu w 2006 roku?",
@@ -175,6 +177,7 @@ function setNext() {
         function final() {
             quizPage.style.display = "none";
             scorePage.style.display = "flex";
+            userResult.innerHTML = username.value;
             scoreResult.innerHTML = score + "/" + questions.length; // last question + score page
             scorePercantage.innerHTML = Math.round(100 * score / questions.length) + "%";
             homeButton.addEventListener('click', goHome);

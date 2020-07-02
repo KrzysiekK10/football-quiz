@@ -93,7 +93,7 @@ header {
 .start-container .fas,
 .score-container .fas {
   color: white;
-  font-size: 28px;
+  font-size: 3em;
   margin: 2vh;
 }
 
@@ -102,13 +102,32 @@ header {
   font-size: 2.7em;
   text-align: center;
   color: white;
-  font-size: 1.5em;
+  font-size: 1.2em;
+}
+
+.start-container .myForm,
+.score-container .myForm {
+  margin: 3em auto 0;
+  font-size: 1.2em;
+  color: white;
+}
+
+.start-container .myForm input[type='text'],
+.score-container .myForm input[type='text'] {
+  padding: .4em;
+  border-radius: .313em;
+  background-image: transparent;
+  width: 140px;
+}
+
+.start-container .myForm input[type='text']:focus,
+.score-container .myForm input[type='text']:focus {
+  background-color: white;
+  color: green;
 }
 
 .start-container #start-btn,
-.start-container #home-btn,
-.score-container #start-btn,
-.score-container #home-btn {
+.score-container #start-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -133,14 +152,12 @@ header {
   -webkit-transition: .5s;
   transition: .5s;
   width: 60%;
-  height: 15%;
-  margin: 1.8em 0;
+  height: 10%;
+  margin: 1.5em 0;
 }
 
 .start-container #start-btn:hover,
-.start-container #home-btn:hover,
-.score-container #start-btn:hover,
-.score-container #home-btn:hover {
+.score-container #start-btn:hover {
   background-color: #043004;
   color: white;
   border: 2px solid white;
@@ -148,9 +165,7 @@ header {
 }
 
 .start-container #start-btn:active,
-.start-container #home-btn:active,
-.score-container #start-btn:active,
-.score-container #home-btn:active {
+.score-container #start-btn:active {
   -webkit-box-shadow: inset 40px 40px 40px green;
           box-shadow: inset 40px 40px 40px green;
   -webkit-filter: blur(10px);
@@ -200,10 +215,6 @@ header {
   color: white;
   font-size: 1em;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
-  /*border: 2px solid white;
-            border-radius: 8px;
-            width: 20%;
-            text-align: center;*/
 }
 
 #quiz .quiz-container .top {
@@ -341,29 +352,79 @@ header {
   cursor: pointer;
 }
 
-.score-container h3 {
+#score .score-container h3 {
   text-transform: uppercase;
+  font-size: 1.2em;
   letter-spacing: .2em;
+  margin-top: 1.2em;
 }
 
-.score-container hr {
+#score .score-container hr {
   border: 1px solid white;
   width: 30%;
   margin: 1em 0;
 }
 
-.score-container #result,
-.score-container #percentage {
+#score .score-container #user {
   font-size: 2.7em;
   text-align: center;
   color: white;
+  font-size: 1em;
 }
 
-.score-container #home-btn {
-  width: 45%;
+#score .score-container #result,
+#score .score-container #percentage {
+  font-size: 2.7em;
+  text-align: center;
+  color: white;
+  font-size: 2.4em;
 }
 
-.score-container .copyright {
+#score .score-container #home-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 200px;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  background: green;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  margin: 0 auto 0;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: .5s;
+  transition: .5s;
+  width: 60%;
+  height: 10%;
+  margin: 1.5em 0;
+  background: transparent;
+  -webkit-transition: color 300ms ease-in-out, -webkit-box-shadow 300ms ease-in-out;
+  transition: color 300ms ease-in-out, -webkit-box-shadow 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out, -webkit-box-shadow 300ms ease-in-out;
+}
+
+#score .score-container #home-btn:hover, #score .score-container #home-btn:focus {
+  -webkit-box-shadow: 0 0 40px 40px #043004 inset;
+          box-shadow: 0 0 40px 40px #043004 inset;
+  color: white;
+}
+
+#score .score-container #home-btn .fa {
+  padding-right: 5px;
+}
+
+#score .score-container .copyright {
   color: white;
   text-align: center;
   font-size: .8em;
@@ -431,6 +492,10 @@ header {
   #quiz .quiz-container .answer-btn {
     width: 180px;
   }
+  #score .score-container #home-btn {
+    width: 50%;
+    font-size: 1.6rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -443,13 +508,20 @@ header {
   #start .start-container .fas {
     font-size: 40px;
   }
+  #start .start-container input[type='text'] {
+    width: 170px;
+  }
   #start .start-container #start-btn {
     width: 45%;
     font-size: 1.7em;
-    margin: 1em 0;
+    margin: .5em 0;
   }
   #quiz .quiz-container .grid {
     margin: 2.5em auto;
+  }
+  #score .score-container #home-btn {
+    width: 45%;
+    font-size: 1.6rem;
   }
 }
 
@@ -483,14 +555,25 @@ header {
     font-size: 4em;
   }
   #start .start-container #start-btn {
-    width: 45%;
-    font-size: 1.8em;
+    width: 35%;
+    font-size: 1.5em;
+    margin-top: 1.5em;
   }
   #quiz .quiz-container .answer-btn {
     width: 270px;
   }
   #score .score-container {
     width: 30%;
+  }
+  #score .score-container #user {
+    font-size: 1.2em;
+  }
+  #score .score-container h3 {
+    font-size: 1.5em;
+  }
+  #score .score-container #home-btn {
+    width: 35%;
+    font-size: 1.5em;
   }
 }
 /*# sourceMappingURL=style.css.map */

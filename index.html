@@ -16,10 +16,13 @@
     <section id="start">
         <img src="./img/startPhoto.jpg" alt="Credit: Photo by Guillaume de Germain on Unsplash">
         <div class="start-container">
-            <h1>Football Quiz</h1>
+            <h1>Quiz</h1>
             <i class="fas fa-futbol"></i>
             <h3>20 pytań</h3>
             <h3>10 sekund na odpowiedź</h3>
+            <form class="myForm">
+                Imię: <input id="username" type="text" name="username" placeholder="name" />
+            </form>
             <button id="start-btn">Start</button>
         </div>
     </section>
@@ -48,13 +51,14 @@
         <img src="./img/scorePhoto.jpg" alt="Credit: Photo by Fauzan Saari on Unsplash">
         <div class="score-container">
             <i class="fas fa-trophy"></i>
+            <div id="user"></div>
             <h3>Twój wynik:</h3>
             <hr />
             <div id="result">
             </div>
             <div id="percentage">
             </div>
-            <button id="home-btn">Home</button>
+            <button id="home-btn"><i class="fa fa-home" aria-hidden="true"></i>Home</button>
             <div class="copyright">Made by: Krzysztof Kerlin &copy 2020</div>
         </div>
         </div>

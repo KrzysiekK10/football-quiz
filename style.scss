@@ -97,21 +97,38 @@ header {
 
     .fas {
         color: white;
-        font-size: 28px;
+        font-size: 3em;
         margin: 2vh;
     }
 
     h3 {
         @include title;
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
 
-    #start-btn,
-    #home-btn {
+    .myForm {
+        margin: 3em auto 0;
+        font-size: 1.2em;
+        color: white;
+
+        input[type='text'] {
+            padding: .4em;
+            border-radius: .313em;
+            background-image: transparent;
+            width: 140px;
+
+            &:focus {
+                background-color: white;
+                color: green;
+            }
+        }
+    }
+
+    #start-btn {
         @include button;
         width: 60%;
-        height: 15%;
-        margin: 1.8em 0;
+        height: 10%;
+        margin: 1.5em 0;
 
         &:hover {
             background-color: rgb(4, 48, 4);
@@ -151,10 +168,6 @@ header {
             color: white;
             font-size: 1em;
             text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
-            /*border: 2px solid white;
-            border-radius: 8px;
-            width: 20%;
-            text-align: center;*/
         }
 
         .top {
@@ -263,36 +276,60 @@ header {
             }
         }
     }
-
 }
 
-.score-container {
+#score {
+    .score-container {
 
-    h3 {
-        text-transform: uppercase;
-        letter-spacing: .2em;
-    }
+        h3 {
+            text-transform: uppercase;
+            font-size: 1.2em;
+            letter-spacing: .2em;
+            margin-top: 1.2em;
+        }
 
-    hr {
-        border: 1px solid white;
-        width: 30%;
-        margin: 1em 0;
-    }
+        hr {
+            border: 1px solid white;
+            width: 30%;
+            margin: 1em 0;
+        }
 
-    #result,
-    #percentage {
-        @include title;
-    }
+        #user {
+            @include title;
+            font-size: 1em;
+        }
 
-    #home-btn {
-        width: 45%;
-    }
+        #result,
+        #percentage {
+            @include title;
+            font-size: 2.4em;
+        }
 
-    .copyright {
-        color: white;
-        text-align: center;
-        font-size: .8em;
-        margin-bottom: 10px;
+        #home-btn {
+            @include button;
+            width: 60%;
+            height: 10%;
+            margin: 1.5em 0;
+            background: transparent;
+            transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+
+            &:hover,
+            &:focus {
+                box-shadow: 0 0 40px 40px rgb(4, 48, 4) inset;
+                color: white;
+            }
+
+            .fa {
+                padding-right: 5px;
+            }
+        }
+
+        .copyright {
+            color: white;
+            text-align: center;
+            font-size: .8em;
+            margin-bottom: 10px;
+        }
     }
 }
 
@@ -352,6 +389,16 @@ header {
             }
         }
     }
+
+    #score {
+        .score-container {
+
+            #home-btn {
+                width: 50%;
+                font-size: 1.6rem;
+            }
+        }
+    }
 }
 
 
@@ -368,10 +415,14 @@ header {
                 font-size: 40px;
             }
 
+            input[type='text'] {
+                width: 170px;
+            }
+
             #start-btn {
                 width: 45%;
                 font-size: 1.7em;
-                margin: 1em 0;
+                margin: .5em 0;
             }
         }
     }
@@ -380,6 +431,16 @@ header {
         .quiz-container {
             .grid {
                 margin: 2.5em auto;
+            }
+        }
+    }
+
+    #score {
+        .score-container {
+
+            #home-btn {
+                width: 45%;
+                font-size: 1.6rem;
             }
         }
     }
@@ -418,7 +479,6 @@ header {
     }
 }
 
-
 @media (min-width: 1200px) {
     #start {
         .start-container {
@@ -429,8 +489,9 @@ header {
             }
 
             #start-btn {
-                width: 45%;
-                font-size: 1.8em;
+                width: 35%;
+                font-size: 1.5em;
+                margin-top: 1.5em;
             }
         }
     }
@@ -440,7 +501,6 @@ header {
             .answer-btn {
                 width: 270px;
             }
-
         }
     }
 
@@ -448,6 +508,18 @@ header {
         .score-container {
             width: 30%;
 
+            #user {
+                font-size: 1.2em;
+            }
+
+            h3 {
+                font-size: 1.5em;
+            }
+
+            #home-btn {
+                width: 35%;
+                font-size: 1.5em;
+            }
         }
     }
 }
