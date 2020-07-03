@@ -13,7 +13,7 @@ body {
 }
 
 header {
-  font-size: 2.7em;
+  font-size: 2.5em;
   text-align: center;
   color: white;
   position: absolute;
@@ -69,7 +69,7 @@ header {
           transform: translate(-50%, -50%);
   border: 2px solid white;
   border-radius: 5px;
-  width: 50%;
+  width: 60%;
   height: 450px;
   background-color: green;
   margin: 1em;
@@ -84,7 +84,7 @@ header {
 
 .start-container h1,
 .score-container h1 {
-  font-size: 2.7em;
+  font-size: 2.5em;
   text-align: center;
   color: white;
   margin: 0 1em;
@@ -93,13 +93,13 @@ header {
 .start-container .fas,
 .score-container .fas {
   color: white;
-  font-size: 3em;
-  margin: 2vh;
+  font-size: 2em;
+  margin: 1vh;
 }
 
 .start-container h3,
 .score-container h3 {
-  font-size: 2.7em;
+  font-size: 2.5em;
   text-align: center;
   color: white;
   font-size: 1.2em;
@@ -115,9 +115,8 @@ header {
 .start-container .myForm input[type='text'],
 .score-container .myForm input[type='text'] {
   padding: .4em;
-  border-radius: .313em;
-  background-image: transparent;
-  width: 140px;
+  border-radius: .3em;
+  width: 150px;
 }
 
 .start-container .myForm input[type='text']:focus,
@@ -137,20 +136,23 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 200px;
-  font-size: 1.4rem;
+  font-size: 1rem;
   line-height: 2rem;
+  font-weight: 600;
   text-align: center;
   text-transform: uppercase;
   background: green;
-  color: #fff;
-  border: 1px solid #fff;
-  border-radius: 30px;
+  color: white;
+  border: 2px solid rgba(31, 31, 31, 0.322);
+  border-radius: 50em;
   margin: 0 auto 0;
+  padding: 1em 2em;
   outline: none;
   cursor: pointer;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-box-shadow: 0em -0.2rem 0em rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0em -0.2rem 0em rgba(0, 0, 0, 0.1) inset;
   width: 60%;
   height: 10%;
   margin: 1.5em 0;
@@ -196,7 +198,7 @@ header {
           transform: translate(-50%, -50%);
   border: 2px solid white;
   border-radius: 5px;
-  width: 50%;
+  width: 60%;
   height: 450px;
   background-color: green;
   margin: 1em;
@@ -276,16 +278,8 @@ header {
   font-weight: 700;
 }
 
-#quiz .quiz-container .correct:hover {
-  border-color: limegreen;
-}
-
 #quiz .quiz-container .wrong {
   background-color: red;
-  border-color: red;
-}
-
-#quiz .quiz-container .wrong:hover {
   border-color: red;
 }
 
@@ -321,20 +315,23 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 200px;
-  font-size: 1.4rem;
+  font-size: 1rem;
   line-height: 2rem;
+  font-weight: 600;
   text-align: center;
   text-transform: uppercase;
   background: green;
-  color: #fff;
-  border: 1px solid #fff;
-  border-radius: 30px;
+  color: white;
+  border: 2px solid rgba(31, 31, 31, 0.322);
+  border-radius: 50em;
   margin: 0 auto 0;
+  padding: 1em 2em;
   outline: none;
   cursor: pointer;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-box-shadow: 0em -0.2rem 0em rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0em -0.2rem 0em rgba(0, 0, 0, 0.1) inset;
   width: 20%;
   padding: .2em;
   margin: .2em 0;
@@ -366,7 +363,7 @@ header {
 }
 
 #score .score-container #user {
-  font-size: 2.7em;
+  font-size: 2.5em;
   text-align: center;
   color: white;
   font-size: 1em;
@@ -374,10 +371,10 @@ header {
 
 #score .score-container #result,
 #score .score-container #percentage {
-  font-size: 2.7em;
+  font-size: 2.5em;
   text-align: center;
   color: white;
-  font-size: 2.4em;
+  font-size: 2.2em;
 }
 
 #score .score-container #home-btn {
@@ -390,23 +387,26 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 200px;
-  font-size: 1.4rem;
+  font-size: 1rem;
   line-height: 2rem;
+  font-weight: 600;
   text-align: center;
   text-transform: uppercase;
   background: green;
-  color: #fff;
-  border: 1px solid #fff;
-  border-radius: 30px;
+  color: white;
+  border: 2px solid rgba(31, 31, 31, 0.322);
+  border-radius: 50em;
   margin: 0 auto 0;
+  padding: 1em 2em;
   outline: none;
   cursor: pointer;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-box-shadow: 0em -0.2rem 0em rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0em -0.2rem 0em rgba(0, 0, 0, 0.1) inset;
   width: 60%;
   height: 10%;
-  margin: 1.5em 0;
+  margin: 1.5em 0 1em;
   background: transparent;
   -webkit-transition: color 300ms ease-in-out, -webkit-box-shadow 300ms ease-in-out;
   transition: color 300ms ease-in-out, -webkit-box-shadow 300ms ease-in-out;
@@ -505,11 +505,8 @@ header {
   #start .start-container h1 {
     font-size: 3.4em;
   }
-  #start .start-container .fas {
-    font-size: 40px;
-  }
   #start .start-container input[type='text'] {
-    width: 170px;
+    width: 200px;
   }
   #start .start-container #start-btn {
     width: 45%;
@@ -555,7 +552,6 @@ header {
     font-size: 4em;
   }
   #start .start-container #start-btn {
-    width: 35%;
     font-size: 1.5em;
     margin-top: 1.5em;
   }

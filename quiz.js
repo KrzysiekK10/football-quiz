@@ -47,8 +47,7 @@ function runTime() {
 let questions = [{
         question: "Kto został królem strzelców na mundialu we Francji w 1998 roku?",
         answers: ["Davor Suker", "Dennis Bergkamp", "Ronaldo Nazario", "Thierry Henry"],
-        correct: 0,
-
+        correct: answerA,
     },
     {
         question: "Kto zagrał w meczu finałowym mundialu w 2006 roku?",
