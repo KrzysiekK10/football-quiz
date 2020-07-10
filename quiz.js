@@ -29,7 +29,7 @@ function startQuiz() {
 }
 
 //time countdown//
-let counter = 10;
+let counter = 15;
 
 function runTime() {
     setInterval(() => {
@@ -38,19 +38,18 @@ function runTime() {
             timeLeft = document.getElementById('timer');
             timeLeft.innerHTML = counter;
         } else {
-            // alert('out of time');
             disabled(); // score = 0
         }
-    }, 1000);
+    }, 1500);
 }
 
 let questions = [{
         question: "Kto został królem strzelców na mundialu we Francji w 1998 roku?",
-        answers: ["Davor Suker", "Dennis Bergkamp", "Ronaldo Nazario", "Thierry Henry"],
+        answers: ["Davor Šuker", "Dennis Bergkamp", "Ronaldo Nazario", "Thierry Henry"],
         correct: answerA,
     },
     {
-        question: "Kto zagrał w meczu finałowym mundialu w 2006 roku?",
+        question: "Kto zagrał w finale mundialu w 2006 roku?",
         answers: ["Francja-Brazylia", "Włochy-Francja", "Brazylia-Niemcy", "Hiszpania-Holandia"],
         correct: answerB,
     },
@@ -70,13 +69,13 @@ let questions = [{
         correct: answerA,
     },
     {
-        question: "Który z piłkarzy 2-krotnie został Mistrzem Świata?",
+        question: "Kto jest 2-krotnym Mistrzem Świata?",
         answers: ["Romario", "Cafu", "Rivaldo", "Roberto Carlos"],
         correct: answerB,
     },
     {
-        question: "Ile razy Arsenal został Mistrzem Anglii?",
-        answers: ["8", "11", "13", "16"],
+        question: "Który klub nie posiada honorowej odznaki Ligi Mistrzów?",
+        answers: ["AC Milan", "FC Barcelona", "Manchester United", "Ajax Amsterdam"],
         correct: answerC,
     },
     {
@@ -85,8 +84,8 @@ let questions = [{
         correct: answerC,
     },
     {
-        question: "Ile Pucharów Europy/Ligę Mistrzów zdobył w karierze Paolo Maldini?",
-        answers: ["2", "3", "4", "5"],
+        question: "Który piłkarz nie grał w MLS?",
+        answers: ["David Beckham", "Lothar Matthäus", "Kaká", "Gabriel Batistuta"],
         correct: answerD,
     },
     {
@@ -95,8 +94,8 @@ let questions = [{
         correct: answerD,
     },
     {
-        question: "Która z drużyn nie posiada honorowej odznaki Ligi Mistrzów?",
-        answers: ["AC Milan", "FC Barcelona", "Manchester United", "Ajax Amsterdam"],
+        question: "Która reprezentacja zagrała w meczu finałowym mundialu?",
+        answers: ["Portugalia", "Bułgaria", "Szwecja", "Jugosławia"],
         correct: answerC,
     },
     {
@@ -105,7 +104,7 @@ let questions = [{
         correct: answerB,
     },
     {
-        question: "Która drużyna ma najwięcej tytułów Mistrza Brazylii?",
+        question: "Który klub ma najwięcej tytułów Mistrza Brazylii?",
         answers: ["SE Palmeiras", "Fluminense FC", "SC Corinthians", "Vasco da Gama"],
         correct: answerA,
     },
@@ -116,31 +115,31 @@ let questions = [{
     },
     {
         question: "Który piłkarz nie zdobył Złotej Piłki?",
-        answers: ["Andriy Shevchenko", "Micheal Owen", "Steven Gerrard", "Zinedine Zidane"],
+        answers: ["Andriy Shevchenko", "Micheal Owen", "Steven Gerrard", "Zinédine Zidane"],
         correct: answerC,
     },
     {
-        question: "Kogo w swoim pierwszym sezonie w 2003 roku Roman Abramowicz nie ściągnął do Chelsea?",
+        question: "Kogo Roman Abramowicz ściągnął do Chelsea najpóźniej?",
         answers: ["Joe Cole", "Juan Sebastian Veron", "Didier Drogba", "Claude Makalele"],
         correct: answerC,
     },
     {
-        question: "Który piłkarz nie grał w MLS?",
-        answers: ["David Beckham", "Lothar Matthäus", "Kaka", "Fernando Torres"],
+        question: "Z którego kraju pochodzi klub Vissel Kobe?",
+        answers: ["Korei Południowej", "Wietnamu", "Chin", "Japonii"],
         correct: answerD,
     },
     {
-        question: "Kto ma najwięcej występów w koszulce Realu Madryt w historii?",
-        answers: ["Raul", "Fernando Hierro", "Iker Casillas", "Guti"],
+        question: "Kto ma najwięcej występów w koszulce Realu Madryt?",
+        answers: ["Raúl", "Fernando Hierro", "Iker Casillas", "Guti"],
         correct: answerA,
     },
     {
-        question: "Z którego kraju pochodzi klub Vissel Kobe?",
-        answers: ["Korei Południowej", "Japonii", "Chin", "Wietnamu"],
+        question: "Kto nie będzie współgospodarzem EURO 2021?",
+        answers: ["Szkocja", "Belgia", "Rosja", "Dania"],
         correct: answerB,
     },
     {
-        question: "Które drużyny 3-krotnie zdobyły tytuł Mistrza Europy?",
+        question: "Które drużyny 3-krotnie zdobyły Mistrzostwo Europy?",
         answers: ["Niemcy i Hiszpania", "Niemcy i Włochy", "Francja i Włochy", "Francja i Hiszpania"],
         correct: answerA,
     },
@@ -162,7 +161,7 @@ nextQuestion.addEventListener('click', setNext)
 
 function setNext() {
     clearStatus(); // reset classes for answers
-    counter = 11; // 10 seconds time for each question
+    counter = 16; // -- 15 seconds time for each question
     indexNumber++; // question number
 
     if (questionsIndex < lastQuestion) {
@@ -198,11 +197,11 @@ answersTag.forEach(function (answer) {
 
         if (answer === questions[questionsIndex].correct) {
             answer.classList.add('correct');
-            answer.innerHTML = "correct";
+            answer.innerHTML = "dobrze";
             score++; // add point
         } else {
             answer.classList.add('wrong');
-            answer.innerHTML = "wrong";
+            answer.innerHTML = "źle";
             showCorrectAnswer();
         }
 

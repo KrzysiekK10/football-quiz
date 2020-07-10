@@ -204,7 +204,7 @@ header {
             font-size: .8em;
             border: 2px solid white;
             background-color: white;
-            width: 300px;
+            width: 70vw;
             margin: 0 auto;
             padding: .5em;
             border-radius: 5px;
@@ -380,7 +380,7 @@ header {
             }
 
             .answer-btn {
-                width: 180px;
+                width: 30vw;
             }
         }
     }
@@ -437,7 +437,6 @@ header {
 }
 
 @media (min-width: 992px) {
-
     #start {
         .start-container {
             width: 35%;
@@ -462,7 +461,7 @@ header {
             }
 
             .answer-btn {
-                width: 220px;
+                width: 20vw;
             }
         }
     }
@@ -480,14 +479,6 @@ header {
             #start-btn {
                 font-size: 1.5em;
                 margin-top: 1.5em;
-            }
-        }
-    }
-
-    #quiz {
-        .quiz-container {
-            .answer-btn {
-                width: 270px;
             }
         }
     }

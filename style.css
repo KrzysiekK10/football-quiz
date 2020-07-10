@@ -252,7 +252,7 @@ header {
   font-size: .8em;
   border: 2px solid white;
   background-color: white;
-  width: 300px;
+  width: 70vw;
   margin: 0 auto;
   padding: .5em;
   border-radius: 5px;
@@ -490,7 +490,7 @@ header {
     gap: 2em 1em;
   }
   #quiz .quiz-container .answer-btn {
-    width: 180px;
+    width: 30vw;
   }
   #score .score-container #home-btn {
     width: 50%;
@@ -540,7 +540,7 @@ header {
     margin: 2.5em auto 1.5em;
   }
   #quiz .quiz-container .answer-btn {
-    width: 220px;
+    width: 20vw;
   }
 }
 
@@ -554,9 +554,6 @@ header {
   #start .start-container #start-btn {
     font-size: 1.5em;
     margin-top: 1.5em;
-  }
-  #quiz .quiz-container .answer-btn {
-    width: 270px;
   }
   #score .score-container {
     width: 30%;
