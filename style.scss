@@ -17,8 +17,8 @@ $hide: none;
     transform: translate(-50%, -50%);
     border: 2px solid white;
     border-radius: 5px;
-    width: 60%;
-    height: 450px;
+    width: 70%;
+    height: auto; //450px;
     background-color: green;
     margin: 1em;
     box-shadow: 2px 2px 10px 2px white;
@@ -31,14 +31,12 @@ $hide: none;
     font-size: 1rem;
     line-height: 2rem;
     font-weight: 600;
-    text-align: center;
     text-transform: uppercase;
     background: green;
     color: white;
     border: 2px solid rgba(31, 31, 31, 0.322);
     border-radius: 50em;
-    margin: 0 auto 0;
-    padding: 1em 2em;
+    padding: .5em 2em;
     outline: none;
     cursor: pointer;
     transition: 0.5s;
@@ -48,7 +46,7 @@ $hide: none;
 }
 
 @mixin title {
-    font-size: 2.5em;
+    font-size: 2em;
     text-align: center;
     color: white;
 }
@@ -66,12 +64,11 @@ body {
 
 header {
     @include title;
+    font-size: 2.2em;
     position: absolute;
     top: 0;
     left: 50%;
     transform: translate(-50%, 0);
-    text-align: unset;
-    margin: 0 auto;
     text-shadow: 3px 4px 0 black;
 }
 
@@ -101,8 +98,8 @@ header {
 
     .fas {
         color: white;
-        font-size: 2em;
-        margin: 1vh;
+        font-size: 1.5em;
+        margin: .5vh;
     }
 
     h3 {
@@ -111,7 +108,7 @@ header {
     }
 
     .myForm {
-        margin: 3em auto 0;
+        margin: 1em auto 0;
         font-size: 1.2em;
         color: white;
 
@@ -168,28 +165,26 @@ header {
         transition-delay: .5s;
 
         .question-number {
+            display: flex;
+            justify-content: space-between;
             color: white;
             font-size: 1em;
-            text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+
+            .time {
+                font-size: 1.4em;
+                font-weight: 700;
+                color: darkblue;
+            }
         }
 
         .top {
             text-align: center;
             font-size: 1.4em;
-            margin: 0;
+            margin-bottom: 1em;
             height: 80px;
             color: white;
             padding: 10px;
             text-shadow: 2px 8px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .time {
-            text-align: right;
-            font-size: 1.2em;
-            font-weight: 700;
-            color: white;
-            margin: .2em;
-            text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
         }
 
         .grid {
@@ -197,7 +192,7 @@ header {
             grid-template-columns: repeat(1, auto);
             gap: .5em;
             font-size: 1.2em;
-            margin: 1em auto;
+            margin: 2em auto 1em;
         }
 
         .answer-btn {
@@ -258,9 +253,6 @@ header {
                 margin: .2em 0;
                 border-radius: 10px;
                 background: steelblue;
-                position: absolute;
-                top: 380px;
-                right: 20px;
 
                 &:hover {
                     background-color: mediumblue;
@@ -280,13 +272,13 @@ header {
             text-transform: uppercase;
             font-size: 1.2em;
             letter-spacing: .2em;
-            margin-top: 1.2em;
+            margin-top: 1em;
         }
 
         hr {
             border: 1px solid white;
             width: 30%;
-            margin: 1em 0;
+            margin: .5em 0;
         }
 
         #user {
@@ -297,14 +289,13 @@ header {
         #result,
         #percentage {
             @include title;
-            font-size: 2.2em;
         }
 
         #home-btn {
             @include button;
             width: 60%;
-            height: 10%;
-            margin: 1.5em 0 1em;
+            //height: 10%;
+            margin: .5em 0;
             background: transparent;
             transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
 
@@ -322,7 +313,7 @@ header {
         .copyright {
             color: white;
             text-align: center;
-            font-size: .8em;
+            font-size: .7em;
             margin-bottom: 10px;
         }
     }
@@ -369,13 +360,9 @@ header {
                 font-size: 1.5em;
             }
 
-            .time {
-                margin: 1em;
-            }
 
             .grid {
                 grid-template-columns: repeat(2, auto);
-                margin: 2em auto;
                 gap: 2em 1em;
             }
 
@@ -389,8 +376,8 @@ header {
         .score-container {
 
             #home-btn {
-                width: 50%;
-                font-size: 1.6rem;
+                width: 40%;
+                font-size: 1.4rem;
             }
         }
     }
@@ -411,28 +398,15 @@ header {
 
             #start-btn {
                 width: 45%;
-                font-size: 1.7em;
+                font-size: 1.5em;
                 margin: .5em 0;
             }
         }
     }
 
-    #quiz {
-        .quiz-container {
-            .grid {
-                margin: 2.5em auto;
-            }
-        }
-    }
-
-    #score {
-        .score-container {
-
-            #home-btn {
-                width: 45%;
-                font-size: 1.6rem;
-            }
-        }
+    #home-btn {
+        width: 35%;
+        font-size: 1.4rem;
     }
 }
 
@@ -444,12 +418,16 @@ header {
             h1 {
                 font-size: 3.7em;
             }
+
+            .myForm {
+                margin: 2em auto 0;
+            }
         }
     }
 
     #quiz {
         .quiz-container {
-            width: 50%;
+            width: 60%;
 
             .top {
                 font-size: 1.8em;
@@ -457,12 +435,18 @@ header {
             }
 
             .grid {
-                margin: 2.5em auto 1.5em;
+                margin: 2em auto 1em;
             }
 
             .answer-btn {
                 width: 20vw;
             }
+        }
+    }
+
+    #score {
+        .score-container {
+            width: 30%;
         }
     }
 }
@@ -477,28 +461,25 @@ header {
             }
 
             #start-btn {
-                font-size: 1.5em;
                 margin-top: 1.5em;
             }
         }
     }
 
+    #quiz {
+        .quiz-container {
+            width: 50%;
+        }
+    }
+
     #score {
-        .score-container {
-            width: 30%;
 
-            #user {
-                font-size: 1.2em;
-            }
+        #user {
+            font-size: 1.2em;
+        }
 
-            h3 {
-                font-size: 1.5em;
-            }
-
-            #home-btn {
-                width: 35%;
-                font-size: 1.5em;
-            }
+        h3 {
+            font-size: 1.5em;
         }
     }
 }

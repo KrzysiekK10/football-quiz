@@ -19,6 +19,7 @@ let questionsIndex = 0; //index questions
 let score = 0;
 let indexNumber = 0; // question number
 
+//start quiz//
 startButton.addEventListener('click', startQuiz)
 
 function startQuiz() {
@@ -43,6 +44,7 @@ function runTime() {
     }, 1500);
 }
 
+//questions and answers//
 let questions = [{
         question: "Kto został królem strzelców na mundialu we Francji w 1998 roku?",
         answers: ["Davor Šuker", "Dennis Bergkamp", "Ronaldo Nazario", "Thierry Henry"],

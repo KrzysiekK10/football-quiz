@@ -13,16 +13,15 @@ body {
 }
 
 header {
-  font-size: 2.5em;
+  font-size: 2em;
   text-align: center;
   color: white;
+  font-size: 2.2em;
   position: absolute;
   top: 0;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
-  text-align: unset;
-  margin: 0 auto;
   text-shadow: 3px 4px 0 black;
 }
 
@@ -69,8 +68,8 @@ header {
           transform: translate(-50%, -50%);
   border: 2px solid white;
   border-radius: 5px;
-  width: 60%;
-  height: 450px;
+  width: 70%;
+  height: auto;
   background-color: green;
   margin: 1em;
   -webkit-box-shadow: 2px 2px 10px 2px white;
@@ -84,7 +83,7 @@ header {
 
 .start-container h1,
 .score-container h1 {
-  font-size: 2.5em;
+  font-size: 2em;
   text-align: center;
   color: white;
   margin: 0 1em;
@@ -93,13 +92,13 @@ header {
 .start-container .fas,
 .score-container .fas {
   color: white;
-  font-size: 2em;
-  margin: 1vh;
+  font-size: 1.5em;
+  margin: .5vh;
 }
 
 .start-container h3,
 .score-container h3 {
-  font-size: 2.5em;
+  font-size: 2em;
   text-align: center;
   color: white;
   font-size: 1.2em;
@@ -107,7 +106,7 @@ header {
 
 .start-container .myForm,
 .score-container .myForm {
-  margin: 3em auto 0;
+  margin: 1em auto 0;
   font-size: 1.2em;
   color: white;
 }
@@ -139,14 +138,12 @@ header {
   font-size: 1rem;
   line-height: 2rem;
   font-weight: 600;
-  text-align: center;
   text-transform: uppercase;
   background: green;
   color: white;
   border: 2px solid rgba(31, 31, 31, 0.322);
   border-radius: 50em;
-  margin: 0 auto 0;
-  padding: 1em 2em;
+  padding: .5em 2em;
   outline: none;
   cursor: pointer;
   -webkit-transition: 0.5s;
@@ -198,8 +195,8 @@ header {
           transform: translate(-50%, -50%);
   border: 2px solid white;
   border-radius: 5px;
-  width: 60%;
-  height: 450px;
+  width: 70%;
+  height: auto;
   background-color: green;
   margin: 1em;
   -webkit-box-shadow: 2px 2px 10px 2px white;
@@ -214,28 +211,30 @@ header {
 }
 
 #quiz .quiz-container .question-number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   color: white;
   font-size: 1em;
-  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+#quiz .quiz-container .question-number .time {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: darkblue;
 }
 
 #quiz .quiz-container .top {
   text-align: center;
   font-size: 1.4em;
-  margin: 0;
+  margin-bottom: 1em;
   height: 80px;
   color: white;
   padding: 10px;
   text-shadow: 2px 8px 4px rgba(0, 0, 0, 0.3);
-}
-
-#quiz .quiz-container .time {
-  text-align: right;
-  font-size: 1.2em;
-  font-weight: 700;
-  color: white;
-  margin: .2em;
-  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
 
 #quiz .quiz-container .grid {
@@ -245,7 +244,7 @@ header {
       grid-template-columns: repeat(1, auto);
   gap: .5em;
   font-size: 1.2em;
-  margin: 1em auto;
+  margin: 2em auto 1em;
 }
 
 #quiz .quiz-container .answer-btn {
@@ -318,14 +317,12 @@ header {
   font-size: 1rem;
   line-height: 2rem;
   font-weight: 600;
-  text-align: center;
   text-transform: uppercase;
   background: green;
   color: white;
   border: 2px solid rgba(31, 31, 31, 0.322);
   border-radius: 50em;
-  margin: 0 auto 0;
-  padding: 1em 2em;
+  padding: .5em 2em;
   outline: none;
   cursor: pointer;
   -webkit-transition: 0.5s;
@@ -337,9 +334,6 @@ header {
   margin: .2em 0;
   border-radius: 10px;
   background: steelblue;
-  position: absolute;
-  top: 380px;
-  right: 20px;
 }
 
 #quiz .quiz-container .next .next-btn:hover {
@@ -353,17 +347,17 @@ header {
   text-transform: uppercase;
   font-size: 1.2em;
   letter-spacing: .2em;
-  margin-top: 1.2em;
+  margin-top: 1em;
 }
 
 #score .score-container hr {
   border: 1px solid white;
   width: 30%;
-  margin: 1em 0;
+  margin: .5em 0;
 }
 
 #score .score-container #user {
-  font-size: 2.5em;
+  font-size: 2em;
   text-align: center;
   color: white;
   font-size: 1em;
@@ -371,10 +365,9 @@ header {
 
 #score .score-container #result,
 #score .score-container #percentage {
-  font-size: 2.5em;
+  font-size: 2em;
   text-align: center;
   color: white;
-  font-size: 2.2em;
 }
 
 #score .score-container #home-btn {
@@ -390,14 +383,12 @@ header {
   font-size: 1rem;
   line-height: 2rem;
   font-weight: 600;
-  text-align: center;
   text-transform: uppercase;
   background: green;
   color: white;
   border: 2px solid rgba(31, 31, 31, 0.322);
   border-radius: 50em;
-  margin: 0 auto 0;
-  padding: 1em 2em;
+  padding: .5em 2em;
   outline: none;
   cursor: pointer;
   -webkit-transition: 0.5s;
@@ -405,8 +396,7 @@ header {
   -webkit-box-shadow: 0em -0.2rem 0em rgba(0, 0, 0, 0.1) inset;
   box-shadow: 0em -0.2rem 0em rgba(0, 0, 0, 0.1) inset;
   width: 60%;
-  height: 10%;
-  margin: 1.5em 0 1em;
+  margin: .5em 0;
   background: transparent;
   -webkit-transition: color 300ms ease-in-out, -webkit-box-shadow 300ms ease-in-out;
   transition: color 300ms ease-in-out, -webkit-box-shadow 300ms ease-in-out;
@@ -427,7 +417,7 @@ header {
 #score .score-container .copyright {
   color: white;
   text-align: center;
-  font-size: .8em;
+  font-size: .7em;
   margin-bottom: 10px;
 }
 
@@ -480,21 +470,17 @@ header {
   #quiz .quiz-container .top {
     font-size: 1.5em;
   }
-  #quiz .quiz-container .time {
-    margin: 1em;
-  }
   #quiz .quiz-container .grid {
     -ms-grid-columns: (auto)[2];
         grid-template-columns: repeat(2, auto);
-    margin: 2em auto;
     gap: 2em 1em;
   }
   #quiz .quiz-container .answer-btn {
     width: 30vw;
   }
   #score .score-container #home-btn {
-    width: 50%;
-    font-size: 1.6rem;
+    width: 40%;
+    font-size: 1.4rem;
   }
 }
 
@@ -510,15 +496,12 @@ header {
   }
   #start .start-container #start-btn {
     width: 45%;
-    font-size: 1.7em;
+    font-size: 1.5em;
     margin: .5em 0;
   }
-  #quiz .quiz-container .grid {
-    margin: 2.5em auto;
-  }
-  #score .score-container #home-btn {
-    width: 45%;
-    font-size: 1.6rem;
+  #home-btn {
+    width: 35%;
+    font-size: 1.4rem;
   }
 }
 
@@ -529,18 +512,24 @@ header {
   #start .start-container h1 {
     font-size: 3.7em;
   }
+  #start .start-container .myForm {
+    margin: 2em auto 0;
+  }
   #quiz .quiz-container {
-    width: 50%;
+    width: 60%;
   }
   #quiz .quiz-container .top {
     font-size: 1.8em;
     padding: 0px 40px;
   }
   #quiz .quiz-container .grid {
-    margin: 2.5em auto 1.5em;
+    margin: 2em auto 1em;
   }
   #quiz .quiz-container .answer-btn {
     width: 20vw;
+  }
+  #score .score-container {
+    width: 30%;
   }
 }
 
@@ -552,20 +541,15 @@ header {
     font-size: 4em;
   }
   #start .start-container #start-btn {
-    font-size: 1.5em;
     margin-top: 1.5em;
   }
-  #score .score-container {
-    width: 30%;
+  #quiz .quiz-container {
+    width: 50%;
   }
-  #score .score-container #user {
+  #score #user {
     font-size: 1.2em;
   }
-  #score .score-container h3 {
-    font-size: 1.5em;
-  }
-  #score .score-container #home-btn {
-    width: 35%;
+  #score h3 {
     font-size: 1.5em;
   }
 }
