@@ -26,7 +26,7 @@ function startQuiz() {
     startPage.style.display = "none"
     quizPage.style.display = "flex"
     runQuestion();
-    runTime(); //  stop only for using score page
+    runTime();
 }
 
 //time countdown//
@@ -159,6 +159,7 @@ function runQuestion() {
 
 const lastQuestion = questions.length - 1;
 
+// next question
 nextQuestion.addEventListener('click', setNext)
 
 function setNext() {
@@ -180,7 +181,7 @@ function setNext() {
             userResult.innerHTML = username.value;
             scoreResult.innerHTML = score + "/" + questions.length; // last question + score page
             scorePercantage.innerHTML = Math.round(100 * score / questions.length) + "%";
-            homeButton.addEventListener('click', goHome);
+            homeButton.addEventListener('click', goHome); // back to homepage
 
             function goHome() {
                 window.location.reload(true);
