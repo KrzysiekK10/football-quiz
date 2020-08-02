@@ -16,11 +16,15 @@
         <img src="./img/startPhoto.jpg" alt="Credit: Photo by Guillaume de Germain on Unsplash">
         <div class="start-container">
             <h1>Quiz</h1>
+            <div class="lang">
+                <a href="#" language="polish" class="active">PL</a>
+                <a href="#" language="english">ENG</a>
+            </div>
             <i class="fas fa-futbol"></i>
-            <h3>20 pytań</h3>
-            <h3>15 sekund na odpowiedź</h3>
+            <h3 class="rule">20 pytań</h3>
+            <h3 class="rule_2">15 sekund na odpowiedź</h3>
             <form class="myForm">
-                Imię: <input id="username" type="text" name="username" placeholder="name" />
+                <label for="username" class="name">Imię:</label> <input name="username" id="username" type="text" />
             </form>
             <button id="start-btn">Start</button>
         </div>
@@ -51,7 +55,7 @@
         <div class="score-container">
             <i class="fas fa-trophy"></i>
             <div id="user"></div>
-            <h3>Twój wynik:</h3>
+            <h3 class="scoreTitle">Twój wynik:</h3>
             <hr />
             <div id="result"></div>
             <div id="percentage"></div>

@@ -94,51 +94,70 @@ header {
         @include title;
     }
 
-    .fas {
-        color: white;
-        font-size: 1.5em;
-        margin: .5vh;
-    }
+    .lang {
+        position: absolute;
+        right: 5%;
+        top: 5%;
 
-    h3 {
-        @include title;
-        font-size: 1.2em;
-    }
-
-    .myForm {
-        margin: 1em auto 0;
-        font-size: 1.2em;
-        color: white;
-
-        input[type='text'] {
-            padding: .4em;
-            border-radius: .3em;
-            width: 170px;
-
-            &:focus {
-                background-color: white;
-                color: green;
-            }
+        a {
+            @include title;
+            font-size: .7em;
+            text-decoration: none;
+            margin: auto .2em;
         }
-    }
 
-    #start-btn {
-        @include button;
-        width: 40%;
-        //height: 10%;
-        margin: 1.5em 0;
-
-        &:hover {
-            background-color: rgb(4, 48, 4);
-            color: white;
+        a.active {
+            background-color: darkgreen;
             border: 2px solid white;
-            letter-spacing: .2em;
+            padding: .2em;
         }
+    }
+}
 
-        &:active {
-            box-shadow: inset 40px 40px 40px green;
-            filter: blur(10px);
+.fas {
+    color: white;
+    font-size: 1.5em;
+    margin: .5vh;
+}
+
+h3 {
+    @include title;
+    font-size: 1.2em;
+}
+
+.myForm {
+    margin: 1em auto 0;
+    font-size: 1.2em;
+    color: white;
+
+    input[type='text'] {
+        padding: .4em;
+        border-radius: .3em;
+        width: 170px;
+
+        &:focus {
+            background-color: white;
+            color: green;
         }
+    }
+}
+
+#start-btn {
+    @include button;
+    width: 40%;
+    //height: 10%;
+    margin: 1.5em 0;
+
+    &:hover {
+        background-color: rgb(4, 48, 4);
+        color: white;
+        border: 2px solid white;
+        letter-spacing: .2em;
+    }
+
+    &:active {
+        box-shadow: inset 40px 40px 40px green;
+        filter: blur(10px);
     }
 }
 

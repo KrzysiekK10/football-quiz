@@ -19,6 +19,28 @@ let questionsIndex = 0; //index questions
 let score = 0;
 let indexNumber = 0; // question number
 
+const langEl = document.querySelector('.lang');
+const langLink = document.querySelectorAll('a');
+const titleEl = document.querySelector('header');
+const rule1El = document.querySelector('.rule');
+const rule2El = document.querySelector('.rule_2');
+const nameEl = document.querySelector('.name');
+const resultEl = document.querySelector('.scoreTitle')
+
+// change language
+langLink.forEach(el => {
+    el.addEventListener('click', () => {
+        langEl.querySelector('.active').classList.remove('active');
+        el.classList.add('active');
+        const attr = el.getAttribute('language');
+        titleEl.textContent = data[attr].startContainer.title;
+        rule1El.textContent = data[attr].startContainer.rule;
+        rule2El.textContent = data[attr].startContainer.rule_2;
+        nameEl.textContent = data[attr].startContainer.name;
+        resultEl.textContent = data[attr].scoreContainer.scoreTitle;
+    });
+})
+
 //start quiz//
 startButton.addEventListener('click', startQuiz)
 
@@ -234,5 +256,32 @@ function clearStatus() {
 function disabled() {
     for (let i = 0; i < answersLen; i++) {
         answersContainer.children[i].classList.add('answered');
+    }
+}
+
+// languages data PL and ENG
+
+const data = {
+    "polish": {
+        "startContainer": {
+            "title": "Piłkarski Quiz",
+            "rule": "20 pytań",
+            "rule_2": "15 sekund na odpowiedź",
+            "name": "Imię:"
+        },
+        "scoreContainer": {
+            "scoreTitle": "Twój wynik:"
+        }
+    },
+    "english": {
+        "startContainer": {
+            "title": "Football Quiz",
+            "rule": "20 questions",
+            "rule_2": "15 second to respond",
+            "name": "Name:"
+        },
+        "scoreContainer": {
+            "scoreTitle": "Your result:"
+        }
     }
 }

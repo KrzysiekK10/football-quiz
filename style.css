@@ -87,43 +87,61 @@ header {
   color: white;
 }
 
-.start-container .fas,
-.score-container .fas {
+.start-container .lang,
+.score-container .lang {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+}
+
+.start-container .lang a,
+.score-container .lang a {
+  font-size: 2em;
+  text-align: center;
+  color: white;
+  font-size: .7em;
+  text-decoration: none;
+  margin: auto .2em;
+}
+
+.start-container .lang a.active,
+.score-container .lang a.active {
+  background-color: darkgreen;
+  border: 2px solid white;
+  padding: .2em;
+}
+
+.fas {
   color: white;
   font-size: 1.5em;
   margin: .5vh;
 }
 
-.start-container h3,
-.score-container h3 {
+h3 {
   font-size: 2em;
   text-align: center;
   color: white;
   font-size: 1.2em;
 }
 
-.start-container .myForm,
-.score-container .myForm {
+.myForm {
   margin: 1em auto 0;
   font-size: 1.2em;
   color: white;
 }
 
-.start-container .myForm input[type='text'],
-.score-container .myForm input[type='text'] {
+.myForm input[type='text'] {
   padding: .4em;
   border-radius: .3em;
   width: 170px;
 }
 
-.start-container .myForm input[type='text']:focus,
-.score-container .myForm input[type='text']:focus {
+.myForm input[type='text']:focus {
   background-color: white;
   color: green;
 }
 
-.start-container #start-btn,
-.score-container #start-btn {
+#start-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -152,16 +170,14 @@ header {
   margin: 1.5em 0;
 }
 
-.start-container #start-btn:hover,
-.score-container #start-btn:hover {
+#start-btn:hover {
   background-color: #043004;
   color: white;
   border: 2px solid white;
   letter-spacing: .2em;
 }
 
-.start-container #start-btn:active,
-.score-container #start-btn:active {
+#start-btn:active {
   -webkit-box-shadow: inset 40px 40px 40px green;
           box-shadow: inset 40px 40px 40px green;
   -webkit-filter: blur(10px);
