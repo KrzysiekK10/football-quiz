@@ -277,7 +277,7 @@ const data = {
         "startContainer": {
             "title": "Football Quiz",
             "rule": "20 questions",
-            "rule_2": "15 second to respond",
+            "rule_2": "15 seconds to respond",
             "name": "Name:"
         },
         "scoreContainer": {
